@@ -8,5 +8,11 @@ terraform {
 }
 provider "aws" {
   region = "ap-south-1"
-  profile = "optum"
+  default_tags {
+    tags = {
+      Environment = "Test"
+      Project     = "terraform-rds"
+      Owner       = "glps"
+    }
+  }
 }
