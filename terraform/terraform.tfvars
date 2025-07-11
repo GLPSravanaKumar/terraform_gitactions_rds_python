@@ -1,5 +1,5 @@
 dbengine = "mysql"
 dbname = "glpsdb"
 username = "admin"
-password = "admin"
+password = "glpsadmin1234"
 instance_type = "db.t3.micro"
