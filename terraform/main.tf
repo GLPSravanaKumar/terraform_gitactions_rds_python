@@ -6,14 +6,14 @@ data "aws_vpc" "default" {
   default = true
 }
 
-data "aws_subnet" "frontend" {
+data "aws_subnet" "default" {
   vpc_id = data.aws_vpc.default.id
   availability_zone = data.aws_availability_zones.available.names[0]
 }
 
 resource "aws_db_subnet_group" "default" {
   name = "default_subnet_group"
-    subnet_ids = [data.aws_subnet.frontend.id]
+    subnet_ids = [data.aws_subnet.default.id]
     tags = {
       "Name" = "default_db_subnet_group"
     }
