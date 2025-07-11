@@ -13,7 +13,7 @@ data "aws_subnet" "default" {
 
 resource "aws_db_subnet_group" "default" {
   name = "default_subnet_group"
-    subnet_ids = [data.aws_subnet.default.id]
+    subnet_ids = [data.aws_subnet.default.ids]
     tags = {
       "Name" = "default_db_subnet_group"
     }
